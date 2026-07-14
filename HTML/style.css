@@ -1,0 +1,74 @@
+/* Remove default spacing */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* Page */
+body{
+    background-color:rgb(255, 255, 255);
+}
+
+/* Outer Container */
+.container{
+    width:95%;
+    height:700px;
+    border:5px solid black;
+    margin:20px auto;
+    position:relative;
+}
+
+/* Common style for all boxes */
+.box{
+    border:5px solid black;
+    position:absolute;
+    text-align:center;
+}
+
+/* Top Left Box */
+.box1{
+    width:380px;
+    height:250px;
+    top:35px;
+    left:35px;
+}
+
+/* Top Right Box */
+.box2{
+    width:320px;
+    height:210px;
+    top:25px;
+    right:35px;
+}
+
+/* Center Box */
+.box3{
+    width:370px;
+    height:230px;
+    top:290px;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+/* Bottom Left Box */
+.box4{
+    width:390px;
+    height:150px;
+    bottom:35px;
+    left:25px;
+}
+
+/* Bottom Right Box */
+.box5{
+    width:390px;
+    height:180px;
+    bottom:20px;
+    right:35px;
+}
+
+/* Text */
+.box h2{
+    margin-top:90px;
+    font-size:35px;
+}
