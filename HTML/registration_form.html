@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+</head>
+
+<body style="font-family: Arial, sans-serif; background-color:#f4f4f4;">
+
+    <div style="width:400px; margin:50px auto; background:white; padding:20px; border-radius:10px; box-shadow:0px 0px 10px rgba(0,0,0,0.2);">
+
+        <h2 style="text-align:center; color:#333;">Registration Form</h2>
+
+        <form action="https://example.com/register" method="post" onsubmit="return validateForm()">
+
+            <label><strong>Full Name:</strong></label><br>
+            <input type="text" id="fullname" placeholder="Enter your full name"
+                style="width:100%; padding:8px; margin:8px 0;" required><br>
+
+            <label><strong>Email Address:</strong></label><br>
+            <input type="email" id="email" placeholder="Enter your email"
+                style="width:100%; padding:8px; margin:8px 0;" required><br>
+
+            <label><strong>Password:</strong></label><br>
+            <input type="password" id="password" placeholder="Enter password"
+                style="width:100%; padding:8px; margin:8px 0;" required><br>
+
+            <label><strong>Confirm Password:</strong></label><br>
+            <input type="password" id="confirmPassword" placeholder="Confirm password"
+                style="width:100%; padding:8px; margin:8px 0;" required><br>
+
+            <label><strong>Age:</strong></label><br>
+            <input type="number" id="age" min="18" max="100"
+                placeholder="Enter your age"
+                style="width:100%; padding:8px; margin:8px 0;" required><br>
+
+            <label>
+                <input type="checkbox" id="newsletter">
+                Subscribe to our Newsletter
+            </label>
+
+            <br><br>
+
+            <input type="submit" value="Register"
+                style="width:100%; padding:10px; background:#007BFF; color:white; border:none; border-radius:5px; cursor:pointer;">
+
+        </form>
+
+    </div>
+
+    <script>
+        function validateForm() {
+
+            let fullname = document.getElementById("fullname").value.trim();
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+            let confirmPassword = document.getElementById("confirmPassword").value;
+            let age = document.getElementById("age").value;
+
+            // Full Name Validation
+            if (fullname === "") {
+                alert("Full Name cannot be empty.");
+                return false;
+            }
+
+            // Email Validation
+            let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+            if (!email.match(emailPattern)) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
+
+            // Password Match Validation
+            if (password !== confirmPassword) {
+                alert("Passwords do not match.");
+                return false;
+            }
+
+            // Age Validation
+            if (age < 18 || age > 100) {
+                alert("Age must be between 18 and 100.");
+                return false;
+            }
+
+            // Success Message
+            alert("Registration Successful!");
+
+            return true;
+        }
+    </script>
+
+</body>
+</html>
